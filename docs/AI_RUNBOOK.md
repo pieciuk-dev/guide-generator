@@ -35,7 +35,7 @@ All `python -m guide_generator.*` commands below assume **repo root** as the cur
 
 | Command | Status |
 |---------|--------|
-| `python -m guide_generator.pdf topics/<topic_id>/` | Documented in [PDF.md](PDF.md); build manually or implement when requested |
+| `python -m guide_generator.pdf <topic_id>` | [PDF.md](PDF.md) — Pandoc + xhtml2pdf |
 
 ---
 
@@ -143,7 +143,7 @@ Full detail: **[GUIDE_BUILD_PROCESS.md](GUIDE_BUILD_PROCESS.md)**.
 | `_ai/worklog.md` | 1–3 | Plans, sources, phase status |
 | `_ai/research/<slug>.md` | 2 | Deep-dive working notes |
 | `topics/<topic_id>/*.md` | 3 | Traveler-facing guide |
-| `attachments/` | 2–3 | Media when audience requires |
+| `attachments/images/<slug>/` | 2 | CC/PD downloads + `ATTRIBUTION.md` |
 
 ---
 
@@ -199,6 +199,6 @@ topics/<topic_id>/
 
 ## Known gaps (do not assume implemented)
 
-- PDF module (`guide_generator.pdf`) — not built yet
+- PDF module (`guide_generator.pdf`) — implemented 2026-06-28
 - `photographer` content requirements — still placeholder bullets
 - Automatic web/cache layer — agent uses tools directly; log in worklog

@@ -20,7 +20,7 @@ Root audience for the first use case. Defines baseline content rules and **locke
 - **Audience snapshot:** before research, use flat `topics/<topic_id>/_ai/audience_profile.md` (resolved from audience graph).
 - **PDF:** compile on request only (`docs/PDF.md`); not part of initial generation.
 - **Research:** general knowledge, internet research, and URLs listed under audience **Websites for search**. Log sources in `topics/<topic_id>/_ai/worklog.md` by phase.
-- **Media downloads:** images and audio only when audience or content rules explicitly require them; store under `attachments/`.
+- **Media downloads:** when a descendant audience **requires reference images** (e.g. `landscape_photographer`), Phase 2 must **search, license-check, and download** CC/public-domain files to `attachments/images/<slug>/`; link-only for restricted licenses. See `docs/GUIDE_BUILD_PROCESS.md` image minimums.
 - **Scripts:** create or run download/analysis scripts only with explicit human permission.
 - **Facts:** coordinates, times, distances, and similar data must come from cited sources — never from assumption or calculation without a source.
 - **Scope:** stay within geographic constraint and audience; add off-topic material only when the audience would highly benefit (note rationale in worklog).
@@ -30,7 +30,7 @@ Root audience for the first use case. Defines baseline content rules and **locke
 - **Process:** all guides use the three-phase build in `docs/GUIDE_BUILD_PROCESS.md`; do not skip site-list discovery.
 - **Sources:** cite or link sources for factual claims; maintain a source table in the topic worklog.
 - **Permissions:** respect local laws, park rules, privacy, and photography restrictions at each site.
-- **Attribution:** credit photographers, authors, and image rights holders when referencing or embedding work.
+- **Attribution:** credit photographers, authors, and image rights holders; maintain `attachments/images/ATTRIBUTION.md` per topic.
 - **Practical usability:** guides are field references — prefer clear structure, scannable headings, and actionable access information over long prose.
 
 ### Websites for search

@@ -75,9 +75,6 @@ def validate_audiences(audiences: dict[str, AudienceDefinition]) -> ValidationRe
 
     if len(roots) == 0:
         result.errors.append(ValidationError("(graph)", "no root audience (parent: null)"))
-    elif len(roots) > 1:
-        ids = ", ".join(sorted(r.id for r in roots))
-        result.errors.append(ValidationError("(graph)", f"multiple roots: {ids}"))
 
     for audience in audiences.values():
         sections = parse_sections(audience.body)

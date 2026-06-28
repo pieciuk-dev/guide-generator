@@ -31,9 +31,13 @@ Inherits all requirements from **photographer** (output format, research discipl
 
 ### Reference images of places
 
-- **Search for photographs** of each suggested location (stock, photographer sites, tourism boards, Wikimedia — respect licensing).
-- **Include images in the guide** when they clarify the subject: embed in Obsidian notes via `attachments/images/` or link with attribution; see root technical rules for downloads.
-- Every image must have **source and attribution** (author, URL, license if known).
+- **Phase 2 (required):** for each site in `site_list.md`, **search for photographs** of that location (Wikimedia Commons, tourism boards, photographer portfolios, stock — respect licensing).
+- List **specific image URLs** in `_ai/research/<slug>.md` — not Commons category pages alone.
+- **Minimums:** ≥ 2 specific images per **must** site; ≥ 1 per **should** site (see `docs/GUIDE_BUILD_PROCESS.md`).
+- **Download** CC and public-domain images to `attachments/images/<slug>/` during Phase 2; record local path in research file.
+- Link-only (no download) when license forbids local copy; still provide author, URL, and license for Phase 3.
+- **Phase 3:** embed (`![[attachments/images/…]]`) or link with attribution in traveler-facing notes.
+- Maintain `attachments/images/ATTRIBUTION.md` as a running manifest for the topic.
 
 ### Per-site information (required for every location)
 

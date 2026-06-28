@@ -108,23 +108,47 @@ For **each row** in `site_list.md`, gather everything needed to write an accurat
 ### Activities (repeat per site)
 
 1. Mark site `in progress` in `site_list.md`.
-2. Targeted research: official pages, maps, portfolios, images, access rules, etc.
-3. Record findings in **`topics/<topic_id>/_ai/research/<slug>.md`** — working notes, quotes, URLs, open questions.
-4. Satisfy audience-specific requirements (e.g. reference photographers, reference images, coordinates from sources).
-5. Download media to `attachments/` only when audience requires; attribute licenses.
+2. Targeted research: official pages, maps, portfolios, **specific photographs** (not only category pages), access rules, etc.
+3. Record findings in **`topics/<topic_id>/_ai/research/<slug>.md`** — use the template below (all sections required unless audience says otherwise).
+4. Satisfy audience-specific requirements (reference photographers, **reference images with URLs + licenses**, coordinates from sources).
+5. **Images (when audience requires them — e.g. `landscape_photographer`):**
+   - Search Wikimedia Commons, tourism boards, and photographer portfolios for **this site**.
+   - List each image in the research file (author, URL, license).
+   - **Download** CC / public-domain images to `topics/<topic_id>/attachments/images/<slug>/` and note local filename in research file.
+   - Link-only (no download) for all-rights-reserved or unclear license — still list URL + attribution for Phase 3.
+   - Maintain `attachments/images/ATTRIBUTION.md` (running manifest).
 6. Mark site `done` in `site_list.md`; append sources to worklog **Phase 2** table.
+
+### Image minimums (landscape_photographer and similar)
+
+| Site priority | Specific image URLs in research | Download to attachments (CC/PD only) |
+|---------------|--------------------------------|-------------------------------------|
+| **must** | ≥ 2 per site | ≥ 1 per site when CC/PD available |
+| **should** | ≥ 1 per site | optional; prefer 1 CC/PD when available |
+| **optional** | ≥ 1 if included in guide | optional |
+
+Do **not** substitute Wikimedia **category** links for specific file URLs.
 
 ### `_ai/research/<slug>.md` template
 
 ```markdown
 # Research: <Site name>
 
-Sources consulted:
+## Sources consulted
 - …
 
 ## Facts (sourced)
 - Coordinates: …
 - Access: …
+
+## Reference photographers
+| Photographer | Why interesting | Link |
+|--------------|-----------------|------|
+
+## Reference images
+| File / description | Author | License | Source URL | Local path |
+|--------------------|--------|---------|------------|------------|
+| … | … | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:… | attachments/images/<slug>/… |
 
 ## Open questions
 - …
@@ -136,6 +160,7 @@ Sources consulted:
 ### Phase 2 done when
 
 - Every site in `site_list.md` is `done` (or explicitly `deferred` with reason in worklog).
+- For image-requiring audiences: image minimums met; `ATTRIBUTION.md` updated.
 
 ---
 
@@ -149,7 +174,7 @@ Turn Phase 2 research into **traveler-facing** Obsidian notes — clear structur
 
 1. Create or update one note per site (or logical groups) under `topics/<topic_id>/`.
 2. Update `index.md` **Contents** with `[[wikilinks]]` to all guide notes.
-3. Embed or link images per [OBSIDIAN.md](OBSIDIAN.md).
+3. Embed or link images from Phase 2 research (`attachments/images/` or attributed URLs); do not skip images that were found and licensed in Phase 2.
 4. Remove duplication; ensure every factual claim is source-backed (detail in guide, full trail in worklog).
 5. Log **Phase 3** summary in `worklog.md`.
 

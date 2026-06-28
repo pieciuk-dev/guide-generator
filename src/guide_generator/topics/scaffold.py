@@ -64,6 +64,28 @@ def init_topic(trip_path: Path, topics_dir: Path | None = None) -> Path:
     shutil.copy2(trip_path, ai_dir / "input.yaml")
     write_resolved_profile(trip.audience, ai_dir / "audience_profile.md")
 
+    att_path = attachments / "ATTRIBUTION.md"
+    if not att_path.exists():
+        att_path.write_text(
+            "\n".join(
+                [
+                    f"# Image attribution — {trip.id}",
+                    "",
+                    "Running manifest for CC/public-domain downloads (Phase 2).",
+                    "",
+                    "| Slug | File | Author | License | Commons | Local path |",
+                    "|------|------|--------|---------|---------|------------|",
+                    "",
+                ]
+            ),
+            encoding="utf-8",
+        )
+
+    research_template = ai_dir / "research" / "_TEMPLATE.md"
+    repo_template = _REPO_ROOT / "topics" / "_template" / "_ai" / "research" / "_TEMPLATE.md"
+    if repo_template.is_file() and not research_template.exists():
+        shutil.copy2(repo_template, research_template)
+
     site_list = ai_dir / "site_list.md"
     site_list.write_text(
         "\n".join(

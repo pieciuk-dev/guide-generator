@@ -68,3 +68,37 @@ Short summaries of system-building work (not traveler-facing content).
 - `.gitignore` now excludes all `topics/**` except `topics/_template/`; `data/trips/*` except `_example.yaml`; `data/cache/**`.
 - Documented in `docs/AI_RUNBOOK.md`.
 - **Next:** add landscape Websites for search URLs or start a guide when a region is chosen.
+
+---
+
+## 2026-06-28 — Phase 2 image requirements (audience + build process)
+
+- **`landscape_photographer`:** explicit Phase 2 image search, URL minimums, CC/PD downloads, `ATTRIBUTION.md`.
+- **`photographer`:** clarified that descendants requiring images trigger downloads in Phase 2 (not “downloads only when required” ambiguity).
+- **`docs/GUIDE_BUILD_PROCESS.md`:** image minimums table, expanded research template (`Reference photographers` + `Reference images` tables); Phase 3 must use Phase 2 images.
+- **`docs/AI_RUNBOOK.md`:** attachments path + image minimums in phase table.
+- Applied catch-up on `olands_island_landscape` research files and partial Commons downloads.
+
+---
+
+## 2026-06-28 — PDF export module
+
+- Implemented `python -m guide_generator.pdf <topic_id>` (Pandoc → HTML + xhtml2pdf).
+- Optional deps: `pip install -e ".[pdf]"`; requires `pandoc` on PATH.
+- Outputs `guide.pdf` and `guide.html` per topic; Öland reference build ~19 MB with embedded images.
+
+---
+
+## 2026-06-28 — `history_culture_lover` audience + Öland heritage guide
+
+- **`audiences/history_culture_lover.md`:** filled as second **root** audience — deep-time heritage, stories with source links, chronology, conflict archaeology; no photography requirements.
+- **`validate.py`:** allow multiple root audiences (independent guide families).
+- **Trip + topic:** `data/trips/olands_island_history.yaml` → `topics/olands_island_history/` (18 sites, Phases 1–3 complete).
+- Research template extended with Timeline + Stories tables; `compile_phase3.py` for heritage note structure.
+
+---
+
+## 2026-06-28 — History audience: dispersed-monument discovery
+
+- **`history_culture_lover`:** added **Phase 1 discovery (required)** — monument inventory pass via official registers (Fornsök), beyond-landmarks rule, significance-over-size, clustering, gap check in worklog. No topic-specific monument types hardcoded.
+- **Websites for search:** `app.raa.se/id/search` (Fornsök). Refreshed `olands_island_history` audience profile.

@@ -12,6 +12,10 @@ dependencies = [
 dev = [
     "pytest>=8.0",
 ]
+pdf = [
+    "markdown>=3.5",
+    "xhtml2pdf>=0.2.16",
+]
 
 [build-system]
 requires = ["hatchling"]
@@ -19,6 +23,9 @@ build-backend = "hatchling.build"
 
 [tool.hatch.build.targets.wheel]
 packages = ["guide_generator"]
+
+[tool.hatch.build.targets.wheel.force-include]
+"src/guide_generator/pdf/assets" = "guide_generator/pdf/assets"
 
 [tool.hatch.build.targets.sdist]
 only-include = ["guide_generator"]
