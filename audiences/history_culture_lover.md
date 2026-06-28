@@ -1,6 +1,6 @@
 ---
 id: history_culture_lover
-parent: null
+parent: photographer
 copy_from: []
 ---
 
@@ -12,29 +12,16 @@ Travelers who explore places primarily for **deep time** — ancient history, ea
 
 They are **not** looking for conventional “history museum” tourism (royal dynasties, 19th–20th century trivia) unless it directly illuminates how the **landscape was shaped** or how people lived in earlier eras.
 
-Root audience for heritage-focused guides. Defines baseline content rules and **locked technical requirements** for all descendant audiences.
+Inherits all requirements from **photographer** (output format, research discipline, sourced facts).
 
-## Technical requirements
+## Additions
 
-- **Build process:** follow `docs/GUIDE_BUILD_PROCESS.md` — Phase 1 (discovery + site list) → Phase 2 (deep dive per site) → Phase 3 (compile guide). Track progress in `_ai/site_list.md` and `_ai/worklog.md`.
-- **Output format:** Obsidian-compatible Markdown (see `docs/OBSIDIAN.md`). Multiple `.md` files per topic; split by logical section.
-- **Topic layout:** each guide lives in `topics/<topic_id>/` with `_ai/` (agent files) and `attachments/` (images, audio). See `docs/GUIDE_WORKFLOW.md`.
-- **Audience snapshot:** before research, use flat `topics/<topic_id>/_ai/audience_profile.md` (resolved from audience graph).
-- **PDF:** compile on request only (`docs/PDF.md`); not part of initial generation.
-- **Research:** general knowledge, internet research, and URLs listed under audience **Websites for search**. Log sources in `topics/<topic_id>/_ai/worklog.md` by phase.
-- **Scripts:** create or run download/analysis scripts only with explicit human permission.
-- **Facts:** dates, coordinates, distances, and similar data must come from cited sources — never from assumption or calculation without a source.
-- **Scope:** stay within geographic constraint and audience; add off-topic material only when the audience would highly benefit (note rationale in worklog).
+### Heritage focus
 
-## Content requirements
-
-- **Process:** all guides use the three-phase build in `docs/GUIDE_BUILD_PROCESS.md`; do not skip site-list discovery.
-- **Sources:** cite or link sources for every factual claim and every story; maintain a source table in the topic worklog.
 - **Chronology:** when a site spans multiple periods, give a brief **timeline** (earliest evidence → key phases → present) from sources.
 - **Stories:** for each site where narrative material exists (legends, archaeological interpretations, documented events), include a **Stories** section with short retellings and **links to the full original** (museum page, academic article, saga translation, county museum blog, etc.). Distinguish **documented fact** from **tradition or interpretation** when sources do.
 - **Heritage focus:** prioritize prehistoric and ancient sites, early settlement patterns, Iron Age and Viking remains, medieval ruins, UNESCO/cultural-landscape context, and **signs of conflict** (ringforts, battlefields, massacre archaeology, defensive works).
 - **Exclude or de-emphasize:** modern tourism fluff, generic restaurant tips, and recent history unless it explains visible heritage.
-- **Practical usability:** guides are field references — clear structure, scannable headings, access information, and cross-links between related sites (`[[wikilinks]]`).
 
 ### Phase 1 discovery (required)
 

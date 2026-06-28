@@ -13,6 +13,7 @@ def test_load_all_audiences():
         "history_culture_lover",
     }
     assert audiences["landscape_photographer"].parent == "photographer"
+    assert audiences["history_culture_lover"].parent == "photographer"
 
 
 def test_validate_current_audiences():
