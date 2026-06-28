@@ -1,7 +1,7 @@
 # Agent instructions — guide-generator
 
 **→ Start here: [`docs/AI_RUNBOOK.md`](docs/AI_RUNBOOK.md)**  
-**→ New users: [`docs/GETTING_STARTED.md`](docs/GETTING_STARTED.md)**  
+**→ New users: [`README.md`](README.md) · [`docs/GETTING_STARTED.md`](docs/GETTING_STARTED.md)**  
 **→ Guide phases: [`docs/GUIDE_BUILD_PROCESS.md`](docs/GUIDE_BUILD_PROCESS.md)** (Discovery → Deep dive → Compile)
 
 ## Quick reference
