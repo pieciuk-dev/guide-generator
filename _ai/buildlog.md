@@ -102,3 +102,11 @@ Short summaries of system-building work (not traveler-facing content).
 
 - **`history_culture_lover`:** added **Phase 1 discovery (required)** — monument inventory pass via official registers (Fornsök), beyond-landmarks rule, significance-over-size, clustering, gap check in worklog. No topic-specific monument types hardcoded.
 - **Websites for search:** `app.raa.se/id/search` (Fornsök). Refreshed `olands_island_history` audience profile.
+
+## 2026-06-28 — Supporting language (installation-wide)
+
+- **`data/system.example.yaml`** + local **`data/system.yaml`** (gitignored): `supporting_language.name` / optional `code`.
+- **`guide_generator.system`:** load config, `python -m guide_generator.system`, warnings on `audiences` validate.
+- **`audience_profile.md`:** appends **System context** on init/refresh/resolve.
+- **`photographer`:** technical + content bullets; child template shows wildlife/bird-name example pattern.
+- Docs: APPROACH, GUIDE_BUILD_PROCESS Phase 0, AI_RUNBOOK, GETTING_STARTED.

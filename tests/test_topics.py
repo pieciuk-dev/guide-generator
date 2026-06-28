@@ -23,7 +23,16 @@ def test_load_trip_example():
     assert trip.audience == "landscape_photographer"
 
 
-def test_init_topic(tmp_path):
+def test_init_topic(tmp_path, monkeypatch):
+    sys_yaml = tmp_path / "system.yaml"
+    sys_yaml.write_text(
+        "supporting_language:\n  name: TestLang\n  code: tl\n",
+        encoding="utf-8",
+    )
+    monkeypatch.setattr(
+        "guide_generator.system._DEFAULT_SYSTEM_PATH",
+        sys_yaml,
+    )
     trip_file = tmp_path / "test_trip.yaml"
     trip_file.write_text(
         "id: test_topic\nregion:\n  name: Test Island\n  type: island\naudience: photographer\n",
@@ -38,6 +47,8 @@ def test_init_topic(tmp_path):
     assert (topic_dir / "attachments" / "images").is_dir()
     profile = (topic_dir / "_ai" / "audience_profile.md").read_text(encoding="utf-8")
     assert "Technical requirements" in profile
+    assert "System context" in profile
+    assert "TestLang" in profile
 
 
 def test_refresh_topic_profile(tmp_path):

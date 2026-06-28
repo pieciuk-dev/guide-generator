@@ -28,9 +28,10 @@ Do **not** skip Phase 1 to write polished guide pages. Do **not** publish Phase 
 
 ## Phase 0 — Setup (once per topic)
 
-1. Trip YAML in `data/trips/<topic_id>.yaml`
-2. `python -m guide_generator.topics init data/trips/<topic_id>.yaml`
-3. Read `topics/<topic_id>/_ai/audience_profile.md` and `input.yaml`
+1. **System language (once per installation):** copy `data/system.example.yaml` → `data/system.yaml` and set `supporting_language` if any audience you use references it.
+2. Trip YAML in `data/trips/<topic_id>.yaml`
+3. `python -m guide_generator.topics init data/trips/<topic_id>.yaml`
+4. Read `topics/<topic_id>/_ai/audience_profile.md` (includes **System context**) and `input.yaml`
 
 ---
 

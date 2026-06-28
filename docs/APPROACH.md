@@ -115,6 +115,33 @@ Trip files: `data/trips/<trip_id>.yaml`
 
 Example regions: Öland island, Madeira, Pomerania, Słowiński National Park.
 
+## Supporting language (installation-wide)
+
+Each installation defines one **supporting language** in `data/system.yaml` (copy from `data/system.example.yaml`). This is the reader's native or preferred language for **supplementary labels** — not necessarily the main language of the guide.
+
+| Piece | Role |
+|-------|------|
+| `data/system.yaml` | Sets `supporting_language.name` (and optional `code`, ISO 639-1) for the whole project |
+| Root `photographer` technical rules | Explains that child audiences may reference supporting language |
+| Child `## Additions` | States **when** to use it — e.g. wildlife photographer: bird common names in supporting language |
+| `audience_profile.md` **System context** | Injected when a topic is initialized or refreshed; agents read this with the flat profile |
+
+**Example** (hypothetical `wildlife_photographer` audience):
+
+```markdown
+## Additions
+
+- For each bird species at a site, list **scientific name** and regional name from sources, then the **common name in supporting language** (from System context) in parentheses.
+```
+
+The guide body stays in the language of sources and the region unless an audience explicitly requires full translation.
+
+Check configuration:
+
+```bash
+python -m guide_generator.system
+```
+
 ## Worklogs
 
 | Activity | File |

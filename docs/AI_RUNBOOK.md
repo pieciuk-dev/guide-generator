@@ -17,7 +17,9 @@ python --version   # requires >= 3.10
 
 All `python -m guide_generator.*` commands below assume **repo root** as the current working directory.
 
-**Git:** guide output is local-only — `topics/<id>/`, `data/trips/<your>.yaml`, and `data/cache/` are in `.gitignore`. Project setup (`audiences/`, `docs/`, `src/`, `_ai/buildlog.md`) stays tracked.
+**Git:** guide output is local-only — `topics/<id>/`, `data/trips/<your>.yaml`, `data/system.yaml`, and `data/cache/` are in `.gitignore`. Project setup (`audiences/`, `docs/`, `src/`, `_ai/buildlog.md`) stays tracked.
+
+**Supporting language:** copy `data/system.example.yaml` to `data/system.yaml` and set your reader's language. Child audiences reference it in `## Additions` when they need local names (e.g. bird names). See [APPROACH.md](APPROACH.md).
 
 ---
 
@@ -25,6 +27,7 @@ All `python -m guide_generator.*` commands below assume **repo root** as the cur
 
 | Command | When to run |
 |---------|-------------|
+| `python -m guide_generator.system` | After editing `data/system.yaml` — show supporting language |
 | `python -m guide_generator.audiences` | After editing any file in `audiences/` |
 | `python -m guide_generator.audiences resolve <audience_id>` | Cache profile to `data/cache/audiences/<id>.md` (optional) |
 | `python -m guide_generator.audiences resolve <audience_id> <path>` | Write resolved profile to a specific path |
@@ -135,7 +138,7 @@ Full detail: **[GUIDE_BUILD_PROCESS.md](GUIDE_BUILD_PROCESS.md)**.
 ### Files the agent reads (in order)
 
 1. `topics/<topic_id>/_ai/input.yaml`
-2. `topics/<topic_id>/_ai/audience_profile.md`
+2. `topics/<topic_id>/_ai/audience_profile.md` — includes **System context** (supporting language from `data/system.yaml`)
 3. `topics/<topic_id>/_ai/worklog.md`
 4. `topics/<topic_id>/_ai/site_list.md`
 5. `topics/<topic_id>/_ai/research/*.md` (Phase 2)

@@ -1,0 +1,6 @@
+# System configuration — copy to data/system.yaml and edit for your installation.
+# See docs/APPROACH.md (Supporting language).
+
+supporting_language:
+  name: Polish
+  code: pl

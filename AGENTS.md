@@ -9,6 +9,7 @@
 ```bash
 pip install -e .
 python -m guide_generator.audiences
+python -m guide_generator.system          # supporting language (data/system.yaml)
 python -m guide_generator.topics init data/trips/<id>.yaml
 python -m guide_generator.topics refresh-profile <topic_id>
 python -m pytest -q

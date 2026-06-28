@@ -24,6 +24,7 @@ Root audience for the first use case. Defines baseline content rules and **locke
 - **Scripts:** create or run download/analysis scripts only with explicit human permission.
 - **Facts:** coordinates, times, distances, and similar data must come from cited sources — never from assumption or calculation without a source.
 - **Scope:** stay within geographic constraint and audience; add off-topic material only when the audience would highly benefit (note rationale in worklog).
+- **Supporting language:** installation-wide setting in `data/system.yaml` (see **System context** in the resolved audience profile). Child audiences may require specific labels in that language — e.g. local bird names for a wildlife photographer — without translating the whole guide.
 
 ## Content requirements
 
@@ -32,6 +33,7 @@ Root audience for the first use case. Defines baseline content rules and **locke
 - **Permissions:** respect local laws, park rules, privacy, and photography restrictions at each site.
 - **Attribution:** credit photographers, authors, and image rights holders; maintain `attachments/images/ATTRIBUTION.md` per topic.
 - **Practical usability:** guides are field references — prefer clear structure, scannable headings, and actionable access information over long prose.
+- **Supporting language:** when a child audience asks for names or terms in the reader's **supporting language**, use the language configured in `data/system.yaml` and surfaced in **System context** of `audience_profile.md`. Keep authoritative regional or scientific names from sources; add supporting-language forms only where the audience specifies (species names, local aliases, etc.).
 
 ### Websites for search
 

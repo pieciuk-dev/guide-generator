@@ -224,6 +224,8 @@ data/cache/**
 data/trips/**
 !data/trips/_example.yaml
 
+data/system.yaml
+
 topics/**
 !topics/.gitkeep
 !topics/_template/

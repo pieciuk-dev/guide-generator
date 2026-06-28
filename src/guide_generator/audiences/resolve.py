@@ -161,7 +161,11 @@ def write_resolved_profile(
     resolved = resolve_audience(audience_id, audiences_dir)
     path = Path(output_path)
     path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_text(resolved.to_markdown(), encoding="utf-8")
+    body = resolved.to_markdown()
+    from guide_generator.system import system_context_markdown
+
+    body = body.rstrip() + "\n\n" + system_context_markdown() + "\n"
+    path.write_text(body, encoding="utf-8")
     return resolved
 
 

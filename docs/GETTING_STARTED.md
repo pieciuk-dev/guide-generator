@@ -93,7 +93,15 @@ python -m pytest -q
 
    If this prints errors, fix them or ask for help before building a guide.
 
-5. **(Optional)** Install [Obsidian](https://obsidian.md/). After you create a guide (see below), you can open `topics/<your_topic_id>/` as a vault or subfolder to read and edit the Markdown notes.
+5. **Set supporting language** (once per installation, if your audiences use it):
+
+   - Copy `data/system.example.yaml` to `data/system.yaml`
+   - Edit `supporting_language` (e.g. `name: Polish`, `code: pl`)
+   - Check: `python -m guide_generator.system`
+
+   Child audiences state **when** to use this language — for example, a wildlife photographer audience might require bird names in your language alongside scientific names. The guide itself is not fully translated unless an audience says so.
+
+6. **(Optional)** Install [Obsidian](https://obsidian.md/). After you create a guide (see below), you can open `topics/<your_topic_id>/` as a vault or subfolder to read and edit the Markdown notes.
 
 ---
 
@@ -109,6 +117,7 @@ You do not need to “prompt engineer” from scratch. This repository is design
 | **Topic** | One guide build — a folder `topics/<topic_id>/` you create locally (e.g. `madeira_landscape`) |
 | **Audience** | Who the guide is for — defined in `audiences/*.md` |
 | **Trip YAML** | Small config file: region + audience — in `data/trips/` |
+| **Supporting language** | Your language for extra labels — in `data/system.yaml`; used when an audience asks for it |
 | **Phase 1–3** | Discovery → deep research per site → final traveler-facing notes |
 
 ### Recommended path for beginners
@@ -203,6 +212,7 @@ Human-oriented workflow: [GUIDE_WORKFLOW.md](GUIDE_WORKFLOW.md).
 |------|------|
 | `audiences/` | Who guides are written for (editable definitions) |
 | `data/trips/` | Your trip configs (usually **not** committed to git) |
+| `data/system.yaml` | Supporting language for this installation (local; copy from `system.example.yaml`) |
 | `topics/<id>/` | One guide’s content and research (usually **local only**) |
 | `docs/` | How to build guides and use exports |
 | `src/guide_generator/` | Python helpers (init, PDF, maps, audience resolver) |
@@ -303,6 +313,7 @@ If you do not accept these terms, **do not use** this project or any guides gene
 ```bash
 pip install -e .
 python -m guide_generator.audiences
+python -m guide_generator.system
 python -m guide_generator.topics init data/trips/<your_trip>.yaml
 python -m guide_generator.pdf <topic_id>
 python -m guide_generator.maps <topic_id>

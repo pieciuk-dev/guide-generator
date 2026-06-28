@@ -153,6 +153,12 @@ def main() -> None:
 
     if not result.ok:
         raise SystemExit(1)
+
+    from guide_generator.system import validate_system_config
+
+    for warning in validate_system_config():
+        print(f"WARNING (system): {warning}")
+
     print(f"OK — {len(audiences)} audience(s) validated")
 
 
