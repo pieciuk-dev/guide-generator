@@ -17,6 +17,8 @@ Each guide is a folder of Markdown files you can open in [Obsidian](https://obsi
 
 Most of the **research and writing** is meant to be done with an **AI assistant** (for example in [Cursor](https://cursor.com/)) that reads project rules and your topic files. You stay in control: you define the trip, approve the site list, and review the final text before you rely on it in the field.
 
+**What you get from git:** audience definitions, documentation, and Python tools. **Finished guides are not in the repository** — they are created on your machine under `topics/<id>/` and are listed in `.gitignore` so your research stays private unless you choose to share it.
+
 ---
 
 ## Tools you need
@@ -91,7 +93,7 @@ python -m pytest -q
 
    If this prints errors, fix them or ask for help before building a guide.
 
-5. **(Optional)** Install [Obsidian](https://obsidian.md/) and open the `topics/` folder as a vault to browse finished guides.
+5. **(Optional)** Install [Obsidian](https://obsidian.md/). After you create a guide (see below), you can open `topics/<your_topic_id>/` as a vault or subfolder to read and edit the Markdown notes.
 
 ---
 
@@ -104,7 +106,7 @@ You do not need to “prompt engineer” from scratch. This repository is design
 | Term | Meaning here |
 |------|----------------|
 | **Agent / AI assistant** | A chat that can read your project files and run commands you allow |
-| **Topic** | One guide build, e.g. `olands_island_history` — folder under `topics/` |
+| **Topic** | One guide build — a folder `topics/<topic_id>/` you create locally (e.g. `madeira_landscape`) |
 | **Audience** | Who the guide is for — defined in `audiences/*.md` |
 | **Trip YAML** | Small config file: region + audience — in `data/trips/` |
 | **Phase 1–3** | Discovery → deep research per site → final traveler-facing notes |
@@ -115,35 +117,48 @@ You do not need to “prompt engineer” from scratch. This repository is design
 
 2. **Open the `guide-generator` folder** as your project/workspace.
 
-3. **Read one finished example** so you know what “done” looks like:
-   - `topics/olands_island_landscape/` or `topics/olands_island_history/`
-   - Start with `index.md`, then open a few site files.
+3. **Skim the tracked examples** so you know the shape of inputs and scaffolding (not a finished guide):
+   - `data/trips/_example.yaml` — copy this to start a new trip config
+   - `topics/_template/_ai/research/_TEMPLATE.md` — Phase 2 research note layout
+   - `audiences/landscape_photographer.md` — example of a child audience definition
 
-4. **Start a new chat** and say something plain, for example:
+4. **Create your first topic folder** (or ask the AI to do it):
+
+   - Copy `data/trips/_example.yaml` to `data/trips/my_region_landscape.yaml`
+   - Edit the copy — set `id`, `region.name`, and `audience`
+   - Run:
+
+   ```bash
+   python -m guide_generator.topics init data/trips/my_region_landscape.yaml
+   ```
+
+   This creates `topics/my_region_landscape/` with `_ai/site_list.md`, `worklog.md`, and an empty `index.md`. That folder is **yours** — it will not appear in git unless you force-add it.
+
+5. **Start a new chat** and say something plain, for example:
 
    > Build a guide for [region name], audience [audience id].  
    > Follow docs/AI_RUNBOOK.md and docs/GUIDE_BUILD_PROCESS.md.
 
-   Or to continue an existing guide:
+   Or to continue a guide you already started:
 
-   > Continue work on topic `olands_island_history`. Read `_ai/worklog.md` and resume the current phase.
+   > Continue work on topic `my_region_landscape`. Read `_ai/worklog.md` and resume the current phase.
 
-5. **Let the agent run Phase 1 first.** It should produce `_ai/site_list.md` — a table of sites to cover. **Read that file.** Remove sites you do not want; add ones you care about. Tell the agent to update the list before it spends time on deep research.
+6. **Let the agent run Phase 1 first.** It should produce `_ai/site_list.md` — a table of sites to cover. **Read that file.** Remove sites you do not want; add ones you care about. Tell the agent to update the list before it spends time on deep research.
 
-6. **Review as you go.** You are the editor:
+7. **Review as you go.** You are the editor:
    - Phase 2 files live in `_ai/research/` — working notes, can be rough.
-   - Phase 3 files are what travelers see — check facts, tone, and safety (access, drones, tides, etc.).
+   - Phase 3 files are what travelers see — `index.md` and one `<slug>.md` per site; check facts, tone, and safety (access, drones, tides, etc.).
 
-7. **Export when satisfied:**
+8. **Export when satisfied** (outputs land in your local topic folder):
 
    ```bash
-   python -m guide_generator.pdf <topic_id>
-   python -m guide_generator.maps <topic_id>
+   python -m guide_generator.pdf my_region_landscape
+   python -m guide_generator.maps my_region_landscape
    ```
 
 ### Tips if AI feels confusing
 
-- **Be specific about place and audience** — “Öland, history_culture_lover” beats “make me a guide.”
+- **Be specific about place and audience** — “Madeira, landscape_photographer” beats “make me a guide.”
 - **One phase at a time** — “Finish Phase 1 site list only” prevents the agent from skipping planning.
 - **Point to files** — “Read `topics/my_topic/_ai/worklog.md` and continue” works better than repeating context.
 - **Say no to scripts** — The project rules require the agent to ask before running download or scraping scripts. You can refuse if unsure.
@@ -272,15 +287,16 @@ If you do not accept these terms, **do not use** this project or any guides gene
 
 ## Where to go next
 
-| Goal | Document |
-|------|----------|
+| Goal | Document / path |
+|------|-----------------|
 | Build your first guide with an AI agent | [AI_RUNBOOK.md](AI_RUNBOOK.md) + [GUIDE_BUILD_PROCESS.md](GUIDE_BUILD_PROCESS.md) |
 | Understand audiences | [APPROACH.md](APPROACH.md) |
 | Obsidian formatting | [OBSIDIAN.md](OBSIDIAN.md) |
 | PDF export | [PDF.md](PDF.md) |
 | Google My Maps CSV | [MAPS.md](MAPS.md) |
-| Example trip config | `data/trips/_example.yaml` |
-| Example finished guides | `topics/olands_island_landscape/`, `topics/olands_island_history/` |
+| Example trip config (in repo) | `data/trips/_example.yaml` |
+| Topic scaffold (in repo) | `topics/_template/` — research template only |
+| Your finished guide (local, not in git) | `topics/<topic_id>/` after `topics init` and Phases 1–3 |
 
 **Quick commands (from repo root):**
 
