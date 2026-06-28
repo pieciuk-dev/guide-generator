@@ -1,5 +1,7 @@
 # Guide Generator — Vision
 
+**Getting started (tools, AI for beginners, risks, disclaimer):** [GETTING_STARTED.md](GETTING_STARTED.md)
+
 A system for building **custom travel guides** tailored to specific **audiences** and **geographic regions**.
 
 Each guide is a **topic folder**: research and Markdown content for a place (island, region, national park, …) written for one resolved audience profile. Output is **Obsidian-compatible Markdown**; **PDF** is compiled on request.

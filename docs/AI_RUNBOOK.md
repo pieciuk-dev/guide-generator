@@ -2,7 +2,7 @@
 
 **Start here** in every new agent session. This is the operational manual for the full AI-driven guide workflow.
 
-Related docs: [GUIDE_BUILD_PROCESS.md](GUIDE_BUILD_PROCESS.md) (**three-phase build**), [GUIDE_WORKFLOW.md](GUIDE_WORKFLOW.md), [APPROACH.md](APPROACH.md), [OBSIDIAN.md](OBSIDIAN.md), [PDF.md](PDF.md).
+Related docs: [GETTING_STARTED.md](GETTING_STARTED.md) (human onboarding), [GUIDE_BUILD_PROCESS.md](GUIDE_BUILD_PROCESS.md) (**three-phase build**), [GUIDE_WORKFLOW.md](GUIDE_WORKFLOW.md), [APPROACH.md](APPROACH.md), [OBSIDIAN.md](OBSIDIAN.md), [PDF.md](PDF.md).
 
 ---
 

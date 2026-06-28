@@ -1,5 +1,6 @@
 # Guide generation workflow
 
+> **New to the project?** Start with **[GETTING_STARTED.md](GETTING_STARTED.md)**.  
 > **AI agents:** operational steps and CLI commands are in **[AI_RUNBOOK.md](AI_RUNBOOK.md)**.
 
 A **topic** is one guide build: a **geographic scope** combined with one **audience**.
