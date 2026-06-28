@@ -60,4 +60,11 @@ Short summaries of system-building work (not traveler-facing content).
 
 - Deleted `topics/slowinski_landscape/` (guide instance, not project setup).
 - Reverted `data/trips/_example.yaml` to generic placeholder; docs/tests use non-instantiated examples.
+
+---
+
+## 2026-06-28 — Gitignore guide output
+
+- `.gitignore` now excludes all `topics/**` except `topics/_template/`; `data/trips/*` except `_example.yaml`; `data/cache/**`.
+- Documented in `docs/AI_RUNBOOK.md`.
 - **Next:** add landscape Websites for search URLs or start a guide when a region is chosen.

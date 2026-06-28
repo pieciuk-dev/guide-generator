@@ -17,6 +17,8 @@ python --version   # requires >= 3.10
 
 All `python -m guide_generator.*` commands below assume **repo root** as the current working directory.
 
+**Git:** guide output is local-only — `topics/<id>/`, `data/trips/<your>.yaml`, and `data/cache/` are in `.gitignore`. Project setup (`audiences/`, `docs/`, `src/`, `_ai/buildlog.md`) stays tracked.
+
 ---
 
 ## Python CLI reference
