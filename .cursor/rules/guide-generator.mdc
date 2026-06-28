@@ -1,0 +1,14 @@
+---
+description: Guide-generator — start with docs/AI_RUNBOOK.md
+alwaysApply: true
+---
+
+# guide-generator
+
+**Read `docs/AI_RUNBOOK.md` and `docs/GUIDE_BUILD_PROCESS.md` first.**
+
+## Essentials
+
+- Phases: 1 Discovery (`site_list.md`) → 2 Deep dive (`_ai/research/`) → 3 Compile (guide `.md`)
+- New guide: `python -m guide_generator.topics init …`
+- Audience **Websites for search** = Phase 1 URLs only; Phase 2+ may add sources

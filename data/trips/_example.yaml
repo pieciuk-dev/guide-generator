@@ -1,0 +1,13 @@
+# Example trip input — copy and edit before: python -m guide_generator.topics init data/trips/<your_id>.yaml
+# Do not use this file directly for init unless you intend to build that guide.
+
+id: example_trip
+region:
+  name: Example Region
+  type: region
+  country: null
+audience: landscape_photographer
+dates:
+  start: null
+  end: null
+notes: []

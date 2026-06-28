@@ -216,3 +216,9 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Generated guides and cached data (keep directory placeholders)
+data/cache/**
+!data/cache/.gitkeep
+topics/**/attachments/**
+!topics/**/attachments/**/.gitkeep
