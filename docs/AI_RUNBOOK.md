@@ -35,7 +35,8 @@ All `python -m guide_generator.*` commands below assume **repo root** as the cur
 
 | Command | Status |
 |---------|--------|
-| `python -m guide_generator.pdf <topic_id>` | [PDF.md](PDF.md) — Pandoc + xhtml2pdf |
+| `python -m guide_generator.pdf <topic_id>` | [PDF.md](PDF.md) — Pandoc + Chrome/Edge headless |
+| `python -m guide_generator.maps <topic_id>` | [MAPS.md](MAPS.md) — Google My Maps CSV |
 
 ---
 
@@ -66,7 +67,12 @@ All `python -m guide_generator.*` commands below assume **repo root** as the cur
 ### “Compile PDF” / “Export guide as PDF”
 
 1. Confirm topic Markdown is complete.
-2. See [PDF.md](PDF.md). If `guide_generator.pdf` is not implemented, tell the user and offer to implement or use Pandoc manually.
+2. See [PDF.md](PDF.md): `python -m guide_generator.pdf <topic_id>`
+
+### “Export map” / “Google My Maps CSV”
+
+1. Confirm Phase 3 site notes include coordinates.
+2. See [MAPS.md](MAPS.md): `python -m guide_generator.maps <topic_id>`
 
 ### “Change the system / project setup”
 

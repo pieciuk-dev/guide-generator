@@ -21,6 +21,7 @@ python -m pytest -q
 | Continue / work on &lt;topic&gt; | Read `_ai/worklog.md` + `site_list.md` → resume phase |
 | Audience changes | `audiences` validate → `refresh-profile` per topic |
 | PDF | After Phase 3 — [PDF.md](docs/PDF.md) |
+| My Maps CSV | After Phase 3 — [MAPS.md](docs/MAPS.md) |
 
 ## Non-negotiables
 

@@ -182,9 +182,19 @@ Turn Phase 2 research into **traveler-facing** Obsidian notes — clear structur
 
 - `index.md` links all intended content.
 - Guide matches audience profile and geographic scope.
-- Ready for optional PDF export ([PDF.md](PDF.md)).
+- Ready for optional PDF export ([PDF.md](PDF.md)) and My Maps CSV ([MAPS.md](MAPS.md)).
 
 ---
+
+## Optional — Google My Maps CSV
+
+After Phase 3:
+
+```bash
+python -m guide_generator.maps <topic_id>
+```
+
+Writes `topics/<topic_id>/guide_map.csv` — single file with Name, Description, Latitude, Longitude, and **Layer** column for icon grouping in [Google My Maps](https://www.google.com/maps/d/). See [MAPS.md](MAPS.md).
 
 ## Worklog structure (all phases)
 

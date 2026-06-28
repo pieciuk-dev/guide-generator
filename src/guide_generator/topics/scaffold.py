@@ -86,6 +86,21 @@ def init_topic(trip_path: Path, topics_dir: Path | None = None) -> Path:
     if repo_template.is_file() and not research_template.exists():
         shutil.copy2(repo_template, research_template)
 
+    map_coords = ai_dir / "map_coords.yaml"
+    if not map_coords.exists():
+        map_coords.write_text(
+            "\n".join(
+                [
+                    "# Optional WGS84 fallbacks when guide notes lack parseable coordinates.",
+                    "# Used by: python -m guide_generator.maps <topic_id>",
+                    "",
+                    "sites: {}",
+                    "",
+                ]
+            ),
+            encoding="utf-8",
+        )
+
     site_list = ai_dir / "site_list.md"
     site_list.write_text(
         "\n".join(
